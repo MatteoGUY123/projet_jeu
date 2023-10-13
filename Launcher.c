@@ -30,6 +30,11 @@ void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_m
 	int carte_choisi = 0;
 	printf("choisissez la carte que vous voulez utiliser : \n");
 	scanf_s("%d", &carte_choisi);
+	if (votre_main[carte_choisi].Alive == false)
+	{
+		printf("votre carte choisi est morte, veuillez en choisir une autre :");
+		scanf_s("%d", &carte_choisi);
+	}
 	int carte_ennemie = (rand() % *nombre_ennemie_carte) + 1;
 	printf("votre carte choisi : %s \n", votre_main[carte_choisi].Name);
 	printf("la carte de l'ennemie : %s \n", main_ennemie[carte_ennemie].Name);
@@ -45,6 +50,28 @@ void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_m
 	if (main_ennemie[carte_ennemie].Pv <= 0)
 	{
 		printf("Vous avez tuer la carte ennemie \n");
+		main_ennemie[carte_ennemie].Alive = true;
+	}
+}
+
+void Attaque_ennemie(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_main, struct Card* main_ennemie) {
+	int carte_choisi = 0;
+	printf("choisissez la carte que vous voulez utiliser pour vous défendre : \n");
+	scanf_s("%d", &carte_choisi);
+	if (votre_main[carte_choisi].Alive == false)
+	{
+		printf("votre carte choisi est morte, veuillez en choisir une autre :");
+		scanf_s("%d", &carte_choisi);
+	}
+	int carte_ennemie = (rand() % *nombre_ennemie_carte) + 1;
+	printf("votre carte choisi : %s \n", votre_main[carte_choisi].Name);
+	printf("la carte de l'ennemie : %s \n", main_ennemie[carte_ennemie].Name);
+	votre_main[carte_choisi].Pv = votre_main[carte_choisi].Pv - main_ennemie[carte_ennemie].Attack;
+	printf("Pv de votre carte apres l'attaque ennemie : %d \n", votre_main[carte_choisi].Pv);
+	if (main_ennemie[carte_ennemie].Pv <= 0)
+	{
+		printf("Votre carte est morte \n");
+		votre_main[carte_choisi].Alive = true;
 	}
 }
 void ShowHand(int *nombre_carte, struct Card *votre_main) {
@@ -78,6 +105,7 @@ void ChoixAction(struct Card *card) {
 	{
 	case 1:
 		Attaquer(&number_cart,&number_ennemie_cart, votre_main, main_ennemie);
+		Attaque_ennemie(&number_cart, &number_ennemie_cart, votre_main, main_ennemie);
 		ChoixAction(card);
 		break;
 	case 2:
@@ -108,15 +136,13 @@ void MainMenu(struct Card *card)
 
 	enum MenuButtons  MyMenuButtons = MenuChoice;
 	int Choice = 0;
-	printf("votre nombre de carte : %d \n", number_cart);
-	printf("Choisissez : \n");
-	printf("1 : Start game \n");
-	printf("2 : Load game \n");
-	printf("3 : Option \n");
-	printf("4 : quit \n");
 	while (MenuChoice != 4)
 	{
-		printf("choisissez votre option");
+		printf("choisissez votre option \n");
+		printf("1 : Start game \n");
+		printf("2 : Load game \n");
+		printf("3 : Option \n");
+		printf("4 : quit \n");
 		scanf_s("%d", &MenuChoice);
 		if (MenuChoice < 1 || MenuChoice > 4) {
 			printf("choissisez un nombre en 1 et 4");
