@@ -11,8 +11,8 @@ struct Card {
 	int Cost;
 	bool Alive;
 };
-void StartApp();
-void EndApp();
+void StartApp(void);
+void EndApp(void);
 void MainMenu(struct Card* card);
 int PiocherCard(int *nombre_carte);
 void PrintCard(int a,int *nombre_carte, struct Card *arr_card, struct Card *votre_main);

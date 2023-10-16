@@ -1,16 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "Launcher.h"
 #define _CRT_SECURE_NO_WARNINGS
+#define VisualStudioCompiler 0
 
 
 struct Card votre_main[10];
 struct Card main_ennemie[10];
 int number_cart = 0;
 int number_ennemie_cart = 0;
-void StartApp() {
+
+void StartApp(void) {
 	printf("App has been started! \n");
 }
-void EndApp() {
+void EndApp(void) {
 	printf("App has been closed! \n");
 }
 
@@ -19,7 +22,7 @@ void PrintCard(int a, int *nombre_carte, struct Card* cards, struct Card *votre_
 	printf("Vous avez piochez cette carte : \n");
 	printf("Nom : %s\n", cards[a].Name);
 	printf("Attaque : %d\n", cards[a].Attack);
-	printf("Défense : %d\n", cards[a].Defence);
+	printf("Defense : %d\n", cards[a].Defence);
 	printf("Pv : %d\n", cards[a].Pv);
 	printf("Cout : %d\n", cards[a].Cost);
 	printf("\n");
@@ -29,11 +32,19 @@ void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_m
 {
 	int carte_choisi = 0;
 	printf("choisissez la carte que vous voulez utiliser : \n");
+#if (VisualStudioCompiler == 1)
 	scanf_s("%d", &carte_choisi);
+#else
+    scanf("%d", &carte_choisi);
+#endif
 	if (votre_main[carte_choisi].Alive == false)
 	{
 		printf("votre carte choisi est morte, veuillez en choisir une autre :");
+#if VisualStudioCompiler == 1
 		scanf_s("%d", &carte_choisi);
+#else
+        scanf("%d", &carte_choisi);
+#endif
 	}
 	int carte_ennemie = (rand() % *nombre_ennemie_carte) + 1;
 	printf("votre carte choisi : %s \n", votre_main[carte_choisi].Name);
@@ -56,12 +67,20 @@ void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_m
 
 void Attaque_ennemie(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_main, struct Card* main_ennemie) {
 	int carte_choisi = 0;
-	printf("choisissez la carte que vous voulez utiliser pour vous défendre : \n");
-	scanf_s("%d", &carte_choisi);
+	printf("choisissez la carte que vous voulez utiliser pour vous defendre : \n");
+#if VisualStudioCompiler == 1
+        scanf_s("%d", &carte_choisi);
+#else
+        scanf("%d", &carte_choisi);
+#endif
 	if (votre_main[carte_choisi].Alive == false)
 	{
 		printf("votre carte choisi est morte, veuillez en choisir une autre :");
+#if VisualStudioCompiler == 1
 		scanf_s("%d", &carte_choisi);
+#else
+        scanf("%d", &carte_choisi);
+#endif
 	}
 	int carte_ennemie = (rand() % *nombre_ennemie_carte) + 1;
 	printf("votre carte choisi : %s \n", votre_main[carte_choisi].Name);
@@ -80,9 +99,9 @@ void ShowHand(int *nombre_carte, struct Card *votre_main) {
 		printf("Votre %d carte : \n", i+1);
 		printf("Nom : %s\n", votre_main[i].Name);
 		printf("Attaque : %d\n", votre_main[i].Attack);
-		printf("Défense : %d\n", votre_main[i].Defence);
+		printf("Defense : %d\n", votre_main[i].Defence);
 		printf("Pv : %d\n", votre_main[i].Pv);
-		printf("Coût : %d\n", votre_main[i].Cost);
+		printf("Cout : %d\n", votre_main[i].Cost);
 		printf("\n");
 	}
 }
@@ -100,7 +119,11 @@ void ChoixAction(struct Card *card) {
 	printf("2 : Piochez une autre carte \n");
 	printf("3 : Voir votre main \n");
 	printf("4 : abandonner la partie \n");
+#if VisualStudioCompiler == 1
 	scanf_s("%d",&Choix_action);
+#else
+    scanf("%d",&Choix_action);
+#endif
 	switch (Choix_action)
 	{
 	case 1:
@@ -131,11 +154,10 @@ void MainMenu(struct Card *card)
 		Load_adventure,
 		Option,
 		Quit,
-  };
+	};
 	int MenuChoice = 1;
 
-	enum MenuButtons  MyMenuButtons = MenuChoice;
-	int Choice = 0;
+//	enum MenuButtons  MyMenuButtons = MenuChoice;
 	while (MenuChoice != 4)
 	{
 		printf("choisissez votre option \n");
@@ -143,10 +165,18 @@ void MainMenu(struct Card *card)
 		printf("2 : Load game \n");
 		printf("3 : Option \n");
 		printf("4 : quit \n");
+#if VisualStudioCompiler == 1
 		scanf_s("%d", &MenuChoice);
+#else
+        scanf("%d", &MenuChoice);
+#endif
 		if (MenuChoice < 1 || MenuChoice > 4) {
 			printf("choissisez un nombre en 1 et 4");
+#if VisualStudioCompiler == 1
 			scanf_s("%d", &MenuChoice);
+#else
+            scanf("%d", &MenuChoice);
+#endif
 		}
 		switch (MenuChoice)
 		{
