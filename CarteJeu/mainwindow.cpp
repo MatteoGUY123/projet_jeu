@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ButtonStartGame, &QPushButton::clicked, this, &MainWindow::afficherBoutonsSupplementaires);
     connect(Attaquer, &QPushButton::clicked, this, &MainWindow::nouvelleFenetre);
     connect(Afficher_carte, &QPushButton::clicked, this, &MainWindow::afficherCarte);
+    connect(Piocher, &QPushButton::clicked, this, &MainWindow::PiocherCarte);
 }
 
 void MainWindow::afficherBoutonsSupplementaires() {
@@ -94,40 +95,32 @@ void MainWindow::afficherCarte(){
     fenetreCarte->show();
     for (int i = 0; i < 10; i++) {
         QLabel *label = findChild<QLabel*>("Carte" + QString::number(i + 1)); // association des boutons
+        QLabel *labelPv = findChild<QLabel*>("Pv" + QString::number(i + 1)); // association des boutons
+        QLabel *labelAttack = findChild<QLabel*>("Attack" + QString::number(i + 1)); // association des boutons
         label->hide();
+        labelPv->hide();
+        labelAttack->hide();
     }
     for (int i = 0; i < number_cart; i++){
         QLabel *label = findChild<QLabel*>("Carte" + QString::number(i + 1));// association des boutons
+        QLabel *labelPv = findChild<QLabel*>("Pv" + QString::number(i + 1));// association des boutons
+        QLabel *labelAttack = findChild<QLabel*>("Attack" + QString::number(i + 1));// association des boutons
+
         label->setText(votre_main[i+1].Name);
+        labelPv->setText("Pv : " + QString::number(votre_main[i+1].Pv));
+        labelAttack->setText("Attack : " + QString::number(votre_main[i+1].Attack));
         label->setProperty("identifiant", i+1); // attribue identifiant a chaque bouton
         label->show();
+        labelPv->show();
+        labelAttack->show();
     }
 }
 
+/*MainWindow::piocherCarte(){
+    std::cout<<"bonjour"<<endl;
+}*/
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-/*
-// Créez un menu
-QMenu *menu = new QMenu(this);
 
-// Ajoutez des actions au menu
-QAction *action1 = menu->addAction("Option 1");
-QAction *action2 = menu->addAction("Option 2");
-
-// Connectez le bouton pour afficher le menu
-connect(ButtonStartGame, &QPushButton::clicked, this, [=](){
-    menu->exec(ButtonStartGame->mapToGlobal(QPoint(0, ButtonStartGame->height())));
-});
-
-// Connectez les actions à des slots
-connect(action1, &QAction::triggered, this, &MainWindow::action1Clique);
-connect(action2, &QAction::triggered, this, &MainWindow::action2Clique);
-}
-void MainWindow::action1Clique() {
-cout<<"SAlut"<< endl; // Code pour l'action 1
-}
-void MainWindow::action2Cliquee() {
-// Code pour l'action 2
-}*/

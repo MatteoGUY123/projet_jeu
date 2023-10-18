@@ -27,6 +27,7 @@ public slots:
     void nouvelleFenetre();
     void boutonCarteClique();
     void afficherCarte();
+    void piocherCarte();
 
 private:
 

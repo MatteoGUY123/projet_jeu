@@ -16,7 +16,7 @@
   <widget class="QLabel" name="Carte1">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>100</x>
      <y>0</y>
      <width>71</width>
      <height>61</height>
@@ -29,8 +29,8 @@
   <widget class="QLabel" name="Carte2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>100</x>
+     <y>70</y>
      <width>71</width>
      <height>51</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="Carte3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>110</y>
+     <x>90</x>
+     <y>130</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -55,8 +55,8 @@
   <widget class="QLabel" name="Carte5">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>160</y>
+     <x>160</x>
+     <y>50</y>
      <width>71</width>
      <height>61</height>
     </rect>
@@ -68,7 +68,7 @@
   <widget class="QLabel" name="Carte6">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>90</x>
      <y>230</y>
      <width>71</width>
      <height>61</height>
@@ -81,8 +81,8 @@
   <widget class="QLabel" name="Carte7">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>0</y>
+     <x>240</x>
+     <y>70</y>
      <width>71</width>
      <height>61</height>
     </rect>
@@ -94,8 +94,8 @@
   <widget class="QLabel" name="Carte8">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>70</y>
+     <x>250</x>
+     <y>120</y>
      <width>71</width>
      <height>51</height>
     </rect>
@@ -107,8 +107,8 @@
   <widget class="QLabel" name="Carte9">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>120</y>
+     <x>250</x>
+     <y>180</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -120,8 +120,8 @@
   <widget class="QLabel" name="Carte10">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>160</y>
+     <x>250</x>
+     <y>230</y>
      <width>71</width>
      <height>51</height>
     </rect>
@@ -133,10 +133,270 @@
   <widget class="QLabel" name="Carte4">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>220</y>
+     <x>90</x>
+     <y>170</y>
      <width>71</width>
      <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv1">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>50</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack1">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>50</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>120</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack2">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack3">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>160</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv3">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>160</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack4">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>220</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv4">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>220</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack5">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>270</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv5">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>270</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack6">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>20</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv6">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>60</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack7">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>120</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv7">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>120</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack8">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>160</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv8">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>160</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack9">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>220</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv9">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>220</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Attack10">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>280</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pv10">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>280</y>
+     <width>49</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
