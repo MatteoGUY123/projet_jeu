@@ -1,11 +1,11 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "Launcher.h"
 #include <stdbool.h>
 
 
-int main(void) {
+int main() {
 	struct Card arr_card[10] = {
 		{0,"thanos", 4, 6, 20, 10,true},
 		{1,"pion1", 3, 1, 10, 4,true},
