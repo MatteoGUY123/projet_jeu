@@ -6,6 +6,8 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QPushButton>
+#include "fenetreattaque.h"
+#include "fenetreaffichercarte.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,6 +25,8 @@ public slots:
    //oid on_insertButton_clicked();
     void afficherBoutonsSupplementaires();
     void nouvelleFenetre();
+    void boutonCarteClique();
+    void afficherCarte();
 
 private:
 
@@ -34,6 +38,9 @@ private:
     QPushButton *ButtonLoadGame;
     QPushButton *ButtonOption;
     QPushButton *ButtonQuit;
+    fenetreAttaque *fenetre;
+    MainWindow *fenetrePrincipale;
+    fenetreAfficherCarte *fenetreCarte;
 };
 
 #endif // MAINWINDOW_H
