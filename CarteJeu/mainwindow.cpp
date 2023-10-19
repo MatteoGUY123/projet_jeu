@@ -29,6 +29,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(Attaquer, &QPushButton::clicked, this, &MainWindow::nouvelleFenetre);
     connect(Afficher_carte, &QPushButton::clicked, this, &MainWindow::afficherCarte);
     connect(Piocher, &QPushButton::clicked, this, &MainWindow::piocherCarte);
+
+    connect(ui->ButtonQuit, &QPushButton::clicked, this, []{exit(0);});
 }
 
 void MainWindow::afficherBoutonsSupplementaires() {
@@ -75,9 +77,53 @@ void MainWindow::boutonCarteClique() {
         switch (identifiant) {
         case 1:
             std::cout <<"vous avez chois la carte 1" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
             break;
         case 2:
             std::cout <<"vous avez chois la carte 2" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 3:
+            std::cout <<"vous avez chois la carte 3" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 4:
+            std::cout <<"vous avez chois la carte 4" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 5:
+            std::cout <<"vous avez chois la carte 5" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 6:
+            std::cout <<"vous avez chois la carte 6" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 7:
+            std::cout <<"vous avez chois la carte 7" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 8:
+            std::cout <<"vous avez chois la carte 8" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 9:
+            std::cout <<"vous avez chois la carte 9" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            break;
+        case 10:
+            std::cout <<"vous avez chois la carte 10" << std::endl;
+            Votre_Attaque(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
+            Attaque_ennemie(&number_cart, &number_ennemie_cart, identifiant, votre_main, main_ennemie);
             break;
         }
         if (fenetre){
@@ -119,6 +165,7 @@ void MainWindow::afficherCarte(){
  void MainWindow::piocherCarte(){
     std::cout<<"bonjour"<<std::endl;
     PrintCard(PiocherCard(&number_cart),&number_cart, card, votre_main);
+    PrintCard(PiocherCard(&number_ennemie_cart),&number_ennemie_cart, card, main_ennemie);
 }
 MainWindow::~MainWindow()
 {

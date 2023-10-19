@@ -40,11 +40,11 @@ void PrintCard(int a, int *nombre_carte, struct Card* cards, struct Card *votre_
     printf("\n");
     votre_main[*nombre_carte] = cards[a];
 }
-void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_main, struct Card* main_ennemie)
+void Votre_Attaque(int* nombre_carte, int* nombre_ennemie_carte, int carte_choisi, struct Card* votre_main, struct Card* main_ennemie)
 {
-    int carte_choisi = 0;
+    //int carte_choisi = 0;
     printf("choisissez la carte que vous voulez utiliser : \n");
-    scanf_s("%d", &carte_choisi);
+    //scanf_s("%d", &carte_choisi);
     if (votre_main[carte_choisi].Alive == false)
     {
         printf("votre carte choisi est morte, veuillez en choisir une autre :");
@@ -69,10 +69,10 @@ void Attaquer(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_m
     }
 }
 
-void Attaque_ennemie(int* nombre_carte, int* nombre_ennemie_carte, struct Card* votre_main, struct Card* main_ennemie) {
-    int carte_choisi = 0;
+void Attaque_ennemie(int* nombre_carte, int* nombre_ennemie_carte, int carte_choisi, struct Card* votre_main, struct Card* main_ennemie) {
+    //int carte_choisi = 0;
     printf("choisissez la carte que vous voulez utiliser pour vous défendre : \n");
-        scanf_s("%d", &carte_choisi);
+        //scanf_s("%d", &carte_choisi);
     if (votre_main[carte_choisi].Alive == false)
     {
         printf("votre carte choisi est morte, veuillez en choisir une autre :");
@@ -110,6 +110,7 @@ int PiocherCard(int *nombre_carte) {
 }
 void ChoixAction(struct Card *card) {
     int Choix_action = 0;
+    int votre_choix = 1;
     printf("que voulez vous faire ? \n");
     printf("1 : Attaquer \n");
     printf("2 : Piochez une autre carte \n");
@@ -119,8 +120,8 @@ void ChoixAction(struct Card *card) {
     switch (Choix_action)
     {
     case 1:
-        Attaquer(&number_cart,&number_ennemie_cart, votre_main, main_ennemie);
-        Attaque_ennemie(&number_cart, &number_ennemie_cart, votre_main, main_ennemie);
+        Votre_Attaque(&number_cart,&number_ennemie_cart,votre_choix, votre_main, main_ennemie);
+        Attaque_ennemie(&number_cart, &number_ennemie_cart,votre_choix, votre_main, main_ennemie);
         ChoixAction(card);
         break;
     case 2:
