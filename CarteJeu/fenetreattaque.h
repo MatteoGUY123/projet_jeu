@@ -15,8 +15,6 @@ public:
     explicit fenetreAttaque(QWidget *parent = nullptr);
     ~fenetreAttaque();
 public slots:
-    //void nouvelleFenetre();
-    //void cacherBouton();
 
 
 private:
