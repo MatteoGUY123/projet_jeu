@@ -35,7 +35,7 @@ void PrintCard(int a, int *nombre_carte, struct Card* cards, struct Card *votre_
     printf("Nom : %s\n", cards[a].Name);
     printf("Attaque : %d\n", cards[a].Attack);
     printf("Défense : %d\n", cards[a].Defence);
-        printf("Pv : %d\n", cards[a].Pv);
+    printf("Pv : %d\n", cards[a].Pv);
     printf("Cout : %d\n", cards[a].Cost);
     printf("\n");
     votre_main[*nombre_carte] = cards[a];

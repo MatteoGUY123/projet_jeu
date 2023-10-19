@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ButtonStartGame, &QPushButton::clicked, this, &MainWindow::afficherBoutonsSupplementaires);
     connect(Attaquer, &QPushButton::clicked, this, &MainWindow::nouvelleFenetre);
     connect(Afficher_carte, &QPushButton::clicked, this, &MainWindow::afficherCarte);
-    connect(Piocher, &QPushButton::clicked, this, &MainWindow::PiocherCarte);
+    connect(Piocher, &QPushButton::clicked, this, &MainWindow::piocherCarte);
 }
 
 void MainWindow::afficherBoutonsSupplementaires() {
@@ -116,9 +116,10 @@ void MainWindow::afficherCarte(){
     }
 }
 
-/*MainWindow::piocherCarte(){
-    std::cout<<"bonjour"<<endl;
-}*/
+ void MainWindow::piocherCarte(){
+    std::cout<<"bonjour"<<std::endl;
+    PrintCard(PiocherCard(&number_cart),&number_cart, card, votre_main);
+}
 MainWindow::~MainWindow()
 {
     delete ui;
